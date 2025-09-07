@@ -14,6 +14,13 @@ app.use(express.json());
 //Routes
 app.use('/api', readmeRoutes);
 
+app.get('/',(req, res) => {
+    res.send({
+        activeStatus: true,
+        error:false,
+    })
+})
+
 app.get('/api/health',(req, res) => {
     res.json({
         status:'OK',
